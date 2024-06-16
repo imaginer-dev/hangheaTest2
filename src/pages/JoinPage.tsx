@@ -12,24 +12,28 @@ import {
   JoinFormActions,
   JoinButton,
 } from '../components/Join';
+import Footer from '@/components/common/Footer.tsx';
 
 const JoinPage = () => {
   return (
-    <JoinPageLayout>
-      <VerticalLogo />
-      <JoinForm>
-        <NameInput />
-        <NickNameInput />
-        <PhoneInput />
-        <EmailInput />
-        <PasswordInput />
-        <PwCheckInput />
-        <TermsCheckInput />
-      </JoinForm>
-      <JoinFormActions>
-        <JoinButton />
-      </JoinFormActions>
-    </JoinPageLayout>
+    <>
+      <JoinPageLayout>
+        <VerticalLogo />
+        <JoinForm>
+          <NameInput />
+          <NickNameInput />
+          <PhoneInput />
+          <EmailInput />
+          <PasswordInput />
+          <PwCheckInput />
+          <TermsCheckInput />
+        </JoinForm>
+        <JoinFormActions>
+          <JoinButton />
+        </JoinFormActions>
+      </JoinPageLayout>
+      <Footer />
+    </>
   );
 };
 

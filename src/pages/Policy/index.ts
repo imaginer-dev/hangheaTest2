@@ -1,4 +1,4 @@
-import PersonalInfoPage from './PersonalInfoPage';
-import UseConditionPage from './UseConditionPage';
+import PersonalInfoShowPage from './PersonalInfoShowPage';
+import UseConditionShowPage from './UseConditionShowPage';
 
-export { PersonalInfoPage, UseConditionPage };
+export { PersonalInfoShowPage, UseConditionShowPage };

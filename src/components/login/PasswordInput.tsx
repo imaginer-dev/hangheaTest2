@@ -3,7 +3,7 @@ import { useLoginState } from '../../stores/loginStore.ts';
 import { LooseValidation, ValidateProcessor } from '@/utils/authUtils.ts';
 
 const PasswordInput = () => {
-  const { password, passwordHandler } = useLoginState();
+  const { password, passwordHandler, showError } = useLoginState();
 
   const validator = new ValidateProcessor(new LooseValidation());
 
@@ -18,7 +18,7 @@ const PasswordInput = () => {
       type={'password'}
       id={'password-input'}
       aria-label={'login-password-input'}
-      error={!validator.isValidPassword(password)}
+      error={showError && !validator.isValidPassword(password)}
       errorText={'비밀번호는 6자리 이상이어야 합니다.'}
     />
   );

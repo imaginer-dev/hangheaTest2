@@ -9,6 +9,7 @@ import EditGroupSchedule from './pages/EditGroupPage.tsx';
 import AddGroupSchedulePage from './pages/AddGroupPage.tsx';
 import GroupCalendarPage from './pages/GroupCalendarPage.tsx';
 import ProfilePage from './pages/ProfilePage.tsx';
+import SettingPage from './pages/SettingPage.tsx';
 import App from '@/App.tsx';
 
 const router = createBrowserRouter([
@@ -58,17 +59,20 @@ const router = createBrowserRouter([
     path: '*',
     element: <NotFound />,
   },
-
+  {
+    path: '/setting',
+    element: <SettingPage />,
+  },
   {
     path: '/policy',
     children: [
       {
         path: 'personalInfo',
-        element: <Policy.PersonalInfoPage />,
+        element: <Policy.PersonalInfoShowPage />,
       },
       {
         path: 'usecondition',
-        element: <Policy.UseConditionPage />,
+        element: <Policy.UseConditionShowPage />,
       },
     ],
   },

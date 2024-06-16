@@ -2,6 +2,7 @@ import { InputRef } from '../common/InputForm.tsx';
 import { useState, useRef, useEffect } from 'react';
 import { Events } from '@/utils/index.ts';
 import { addPersonalSchedule, updatePersonalSchedule } from '@/apis/personalScheduleApi.ts';
+import { formatDate } from '@/utils/dateUtils.ts';
 
 export interface eventProps {
   id?: number;
@@ -21,11 +22,11 @@ const CreateEventDialog = ({ id, title, start_date, end_date }: eventProps) => {
   useEffect(() => {
     if (start_date) {
       setStartDate(start_date);
-      startRef!.current!.value = start_date;
+      startRef!.current!.value = formatDate(start_date);
     }
     if (end_date) {
       setEndDate(end_date);
-      endRef!.current!.value = end_date;
+      endRef!.current!.value = formatDate(end_date);
     }
     if (title) {
       setTitle(title);
@@ -118,7 +119,7 @@ const CreateEventDialog = ({ id, title, start_date, end_date }: eventProps) => {
         errorText="끝 날짜는 시작날짜보다 늦게 해주세요."
       />
       <hr className="mb-2 mt-2" />
-      <button className="btn w-full bg-primary text-base-100" onClick={onCreateClicked}>
+      <button className="btn w-full bg-lime-900 text-base-100" onClick={onCreateClicked}>
         {id ? '수정하기' : '추가하기'}
       </button>
     </div>

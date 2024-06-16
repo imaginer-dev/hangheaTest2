@@ -36,8 +36,12 @@ const Dialog = forwardRef<DialogElement, Props>((props, ref) => {
         {title && <h3 className="text-lg font-bold">{title}</h3>}
         {desc && <p className={descClassName}>{desc}</p>}
         {children && <div>{children}</div>}
-        <div className="modal-action flex justify-center">
-          <button type="button" className="btn bg-primary text-base-100" onClick={() => dialogRef.current?.close()}>
+        <div className="modal-action mt-1 flex justify-center">
+          <button
+            type="button"
+            className="btn w-full bg-primary text-base-100"
+            onClick={() => dialogRef.current?.close()}
+          >
             닫기
           </button>
         </div>

@@ -18,7 +18,7 @@ const messages = {
 };
 
 const LoginButton = () => {
-  const { email, password } = useLoginState();
+  const { email, password, setShowError } = useLoginState();
   const { mutate, isPending } = useSignIn();
   const navigate = useNavigate();
   const dialogRef = useRef<DialogElement | null>(null);
@@ -29,6 +29,7 @@ const LoginButton = () => {
   const onClick = () => {
     if (!validator.isValidEmail(email) || !validator.isValidPassword(password)) {
       setDialogMessage(messages.ISVAILD_ERROR);
+      setShowError(true);
       dialogRef.current?.openModal();
       return;
     }

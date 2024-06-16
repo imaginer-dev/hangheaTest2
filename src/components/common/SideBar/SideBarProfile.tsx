@@ -23,7 +23,7 @@ const SideBarProfile: FC<Props> = ({ userName, imageUrl }) => {
         <Link to="/" className="cursor-pointer rounded-lg bg-base-100 px-3 py-1 font-black hover:opacity-50">
           내 캘린더 보기
         </Link>
-        <Link to="/profile" className="cursor-pointer hover:opacity-50">
+        <Link to="/setting" className="cursor-pointer hover:opacity-50">
           <SettingIcon />
         </Link>
       </div>

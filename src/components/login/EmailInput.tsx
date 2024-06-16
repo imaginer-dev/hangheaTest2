@@ -3,7 +3,7 @@ import { useLoginState } from '../../stores/loginStore.ts';
 import { LooseValidation, ValidateProcessor } from '@/utils/authUtils.ts';
 
 const EmailInput = () => {
-  const { email, emailHandler } = useLoginState();
+  const { email, emailHandler, showError } = useLoginState();
   const validator = new ValidateProcessor(new LooseValidation());
 
   return (
@@ -17,7 +17,7 @@ const EmailInput = () => {
       name={'email'}
       id={'email-input'}
       aria-label={'login-email-input'}
-      error={!validator.isValidEmail(email)}
+      error={showError && !validator.isValidEmail(email)}
       errorText={'올바른 이메일을 입력해 주세요.'}
     />
   );

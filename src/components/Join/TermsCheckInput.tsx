@@ -1,7 +1,8 @@
 import { useJoinState } from '@/stores/joinStore';
 import { useEffect, useRef, useState } from 'react';
 import Dialog from '../common/Dialog';
-import { PersonalInfoPage, UseConditionPage } from '@/pages/Policy';
+import PersonalInfoPage from '@/pages/Policy/PersonalInfoPage';
+import UseConditionPage from '@/pages/Policy/UseConditionPage';
 
 const TermsCheckInput = () => {
   interface DialogElement {

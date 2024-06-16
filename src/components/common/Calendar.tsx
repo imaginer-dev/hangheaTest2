@@ -174,9 +174,11 @@ export default memo(function Calendar({
           }}
         />
       </div>
-      <div className="eventCardList mt-10">
-        {selectedDate && <EventCards events={selectedEvents} date={selectedDate} onDelete={onDeleteClicked} />}
-      </div>
+      {isGroupCalendar ? null : (
+        <div className="eventCardList mt-10">
+          {selectedDate && <EventCards events={selectedEvents} date={selectedDate} onDelete={onDeleteClicked} />}
+        </div>
+      )}
     </div>
   );
 });
